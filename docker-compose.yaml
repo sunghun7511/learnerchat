@@ -5,6 +5,8 @@ services:
     build: .
     ports:
       - "1213:1213"
+    environment:
+      - MYSQL_URL=mysql+aiomysql://${MYSQL_USER}:${MYSQL_PASSWORD}@mysql/${MYSQL_DATABASE}
     depends_on:
       - mysql
 
@@ -12,9 +14,9 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: learnerchat
-      MYSQL_USER: learnerchat
-      MYSQL_PASSWORD: th1s1s-s3cr3tp4ssw0rd
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
