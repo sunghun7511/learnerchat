@@ -4,10 +4,10 @@ from pydantic import BaseModel
 class Character(BaseModel):
     name: str
     description: str
-    profile_image: str
+    image_url: str
 
     prompt: str
-    tags: list[str]
+    tags: str
 
     class Config:
         from_attributes = True
