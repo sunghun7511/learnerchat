@@ -10,7 +10,7 @@ from learnerchat.database import session
 async def get_character_list(*, page: int = 1, per_page: int = 20) -> list[Character]:
     query = select(CharacterDAO).limit(per_page).offset((page - 1) * per_page)
     result = await session.execute(query)
-    return [Character.from_orm(character) for character in result.all()]
+    return [Character.from_orm(character) for character in result.scalars().all()]
 
 
 async def create_character(
