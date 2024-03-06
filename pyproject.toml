@@ -12,6 +12,9 @@ fastapi = "^0.110.0"
 uvicorn = "^0.27.1"
 pyjwt = "^2.8.0"
 python-decouple = "^3.8"
+aiomysql = "^0.2.0"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.28"}
+cryptography = "^42.0.5"
 
 
 [build-system]
