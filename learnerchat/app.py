@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from core.setup import check_and_init
-from views import auth_router, character_router
+from learnerchat.core.setup import check_and_init
+from learnerchat.views import auth_router, character_router
 
 
 def create_app() -> FastAPI:

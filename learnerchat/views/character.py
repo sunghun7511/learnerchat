@@ -3,9 +3,9 @@ from typing import Annotated
 from fastapi import APIRouter, Depends
 from fastapi.responses import StreamingResponse
 
-from core.auth import get_current_user
-from core.character import get_character_list, create_character, chat_character
-from models.user import User
+from learnerchat.core.auth import get_current_user
+from learnerchat.core.character import get_character_list, create_character, chat_character
+from learnerchat.models.user import User
 
 router = APIRouter(prefix="/character")
 

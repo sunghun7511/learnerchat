@@ -1,5 +1,6 @@
-from core.auth import register, login
 from fastapi import APIRouter
+
+from learnerchat.core.auth import register, login
 
 router = APIRouter()
 

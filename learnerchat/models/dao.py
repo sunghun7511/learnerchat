@@ -1,6 +1,6 @@
 from sqlalchemy import Column, BigInteger, String
 
-from database import Base
+from learnerchat.database import Base
 
 
 class UserDAO(Base):

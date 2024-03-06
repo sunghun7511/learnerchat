@@ -6,10 +6,10 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jwt import encode, decode
 from sqlalchemy.future import select
 
-from models.user import User
-from models.dao import UserDAO
+from learnerchat.models.user import User
+from learnerchat.models.dao import UserDAO
 
-from database import session
+from learnerchat.database import session
 
 JWT_SECRET = config("JWT_SECRET", "SampleSecret")
 

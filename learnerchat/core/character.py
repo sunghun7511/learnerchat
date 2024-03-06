@@ -1,10 +1,10 @@
 from sqlalchemy.future import select
 
-from models.user import User
-from models.character import Character
-from models.dao import CharacterDAO
+from learnerchat.models.user import User
+from learnerchat.models.character import Character
+from learnerchat.models.dao import CharacterDAO
 
-from database import session
+from learnerchat.database import session
 
 
 async def get_character_list(*, page: int = 1, per_page: int = 20) -> list[Character]:
