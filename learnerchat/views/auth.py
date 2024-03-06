@@ -1,6 +1,5 @@
 from core.auth import register, login
 from fastapi import APIRouter
-from fastapi.responses import HTMLResponse
 
 router = APIRouter()
 
