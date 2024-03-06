@@ -15,7 +15,7 @@ class CharacterDAO(Base):
     __tablename__ = 'character'
 
     id = Column(BigInteger, primary_key=True, autoincrement=True)
-    user_id = Column(BigInteger, nullable=False)
+    user_email = Column(String(128), nullable=False)
     name = Column(String(128), nullable=False)
     description = Column(String(512), nullable=False)
     profile_image = Column(String(1024), nullable=False)

@@ -22,7 +22,7 @@ async def create_character(
     tags: list[str]
 ) -> Character:
     character = CharacterDAO(
-        user_id=user.id,
+        user_email=user.email,
         name=name,
         description=description,
         image_url=image_url,
