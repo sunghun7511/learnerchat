@@ -13,16 +13,26 @@ async def get_character_list(*, page: int = 1, per_page: int = 20) -> list[Chara
     return [Character.from_orm(character) for character in result.all()]
 
 
-def create_character(
+async def create_character(
     user: User,
     name: str,
     description: str,
     image_url: str,
     prompt: str,
     tags: list[str]
-):
-    pass
+) -> Character:
+    character = CharacterDAO(
+        user_id=user.id,
+        name=name,
+        description=description,
+        image_url=image_url,
+        prompt=prompt,
+        tags=",".join(tags)
+    )
+    session.add(character)
+    await session.commit()
+    return Character.from_orm(character)
 
 
-def chat_character():
+async def chat_character():
     pass
