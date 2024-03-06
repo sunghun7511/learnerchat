@@ -5,3 +5,19 @@ services:
     build: .
     ports:
       - "1213:1213"
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: learnerchat
+      MYSQL_USER: learnerchat
+      MYSQL_PASSWORD: th1s1s-s3cr3tp4ssw0rd
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    restart: always
