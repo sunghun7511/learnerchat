@@ -5,6 +5,8 @@ services:
     build: .
     ports:
       - "1213:1213"
+    depends_on:
+      - mysql
 
   mysql:
     image: mysql:8.0
