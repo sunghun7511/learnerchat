@@ -18,7 +18,7 @@ class CharacterDAO(Base):
     user_email = Column(String(128), nullable=False)
     name = Column(String(128), nullable=False)
     description = Column(String(512), nullable=False)
-    profile_image = Column(String(1024), nullable=False)
+    image_url = Column(String(1024), nullable=False)
     prompt = Column(String(1024), nullable=False)
 
     tags = Column(String(1024), nullable=False)
