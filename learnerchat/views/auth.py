@@ -1,15 +1,17 @@
 from core.auth import register, login
-from fastapi import APIRouter, Request
+from fastapi import APIRouter
 from fastapi.responses import HTMLResponse
 
 router = APIRouter()
 
 
-@router.post("/register", response_class=HTMLResponse)
-async def view_post_register(request: Request):
-    pass
+@router.post("/register")
+async def view_post_register(email: str, nickname: str):
+    token = await register(email, nickname)
+    return {"access_token": token, "token_type": "bearer"}
 
 
 @router.post("/login", response_class=HTMLResponse)
-async def view_post_login(request: Request):
-    pass
+async def view_post_login(email: str):
+    token = await login(email)
+    return {"access_token": token, "token_type": "bearer"}
