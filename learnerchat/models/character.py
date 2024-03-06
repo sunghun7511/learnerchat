@@ -8,3 +8,13 @@ class Character(BaseModel):
 
     prompt: str
     tags: list[str]
+
+    class Config:
+        from_attributes = True
+
+
+class CharacterChat(BaseModel):
+    chat: list[str]
+
+    class Config:
+        from_attributes = True
