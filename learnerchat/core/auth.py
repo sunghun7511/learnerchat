@@ -29,7 +29,7 @@ async def get_current_user(credentials: Annotated[HTTPAuthorizationCredentials, 
     if len(users) == 0:
         raise ValueError("User not found")
 
-    return users[0]
+    return User.from_orm(users[0])
 
 
 async def register(email: str, nickname: str) -> str:
